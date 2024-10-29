@@ -9,11 +9,13 @@ body {
     margin-left: 50px;
 }
 .hero {
+    position: relative; /* Убедитесь, что z-index работает для hero */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 1; /* Устанавливаем более низкий индекс для слоя hero */
 }
 .pumpkins {
     display: flex;
@@ -317,8 +319,8 @@ p{
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
+    z-index: 10; /* Обеспечивает, что кнопка будет выше других элементов */
 }
-
 .music-control:hover {
     background-color: #555;
 }
@@ -344,4 +346,54 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:hover {
     background-color: #F79A44;
+}
+.center-buttons a {
+    position: relative;
+}
+
+.center-buttons a .hover-image {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.center-buttons a:hover .hover-image {
+    display: block;
+}
+
+#welcome-pump {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Creepster', cursive;
+}
+
+#welcome-pump h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    color: #FFC107;
+    text-shadow: 2px 2px #000;
+}
+
+#welcome-pump p {
+    font-size: 24px;
+    color: #FFD700;
+    text-shadow: 1px 1px #000;
+}
+
+.contract-address {
+    background-color: #000;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.contract-address span {
+    font-family: 'Courier New', monospace;
 }
